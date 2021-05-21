@@ -23,13 +23,12 @@ public class ProducerDemoKeys {
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
         // send data
-        // 키가 없기 때문에 RR으로 Message LoadBalancing 
         for(int i = 0; i < 10; i++) {
 
             String topic = "first_topic";
             String value = "hello world " + i;
-            String key = "id_" + Integer.toString(i);
-            //String key = "id_0";
+            //String key = "id_" + Integer.toString(i);
+            String key = "id_0";
 
             ProducerRecord<String, String> record =
                     new ProducerRecord<String, String>("first_topic", key, value);
