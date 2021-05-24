@@ -1,4 +1,4 @@
-package com.github.simple.kafka.tutorial2;
+package kafka.tutorial2;
 
 import com.google.common.collect.Lists;
 import com.twitter.hbc.ClientBuilder;
@@ -15,10 +15,8 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Resources;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.BlockingQueue;
@@ -27,13 +25,13 @@ import java.util.concurrent.TimeUnit;
 
 public class TwitterProducer {
 
-    private String consumerKey = "jiZHNrcIoE9AZyqZHNFr35qrr";
-    private String consumerSecret = "Y27H4tycgVNgJI1MyN4c0T90tByT7j94K1WMJQuPtbGKLVpEl8";
-    private String token = "3209148475-W3hZLGLjkcZpq9tV3QivxIE0EBKTTjkYNsOAcIc";
-    private String tokenSecret = "wO4Ak4j4AfJVeBUkXpZy2HITKeHUlkfi9vC623sWwlYqy";
-
     private final String twitterApiConfigPath = "config/twitterApi.properties";
     private final String bootstrapServers = "127.0.0.1:9092";
+
+    private String consumerKey = "";
+    private String consumerSecret = "";
+    private String token = "";
+    private String tokenSecret = "";
 
     Logger logger = LoggerFactory.getLogger(TwitterProducer.class.getName());
 
